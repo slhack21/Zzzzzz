@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --white: #fff;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+header .logo svg path {
+   fill: var(--white); /* Ensure SVG is white */
+}
+
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+main {
+    flex: 1; /* Makes main content take up available space */
+    padding: 2rem 1rem;
+}
+
+section {
+    background: var(--white);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly lower */
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger the animation */
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.2s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+#services ul {
+    list-style: none;
+    padding: 0;
+}
+
+#services li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+#services li svg {
+    margin-right: 10px;
+    color: var(--primary-color);
+    min-width: 24px; /* Prevent icon squishing */
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 1.5rem 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+     #services li, #contact p, .cta-button {
+         font-size: 1rem;
+     }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+
+    header .logo svg {
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+.side-menu.active {
+  left: 0;
+}
+.side-menu a {
+  color: white;
+  display: block;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.services, .contactez-nous {
+  text-align: center;
+  padding: 40px 20px;
+}
+.services h2, .contactez-nous h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.service-item {
+  margin: 20px auto;
+}
+.service-item img {
+  width: 64px;
+  height: 64px;
+}
+.btn-contact {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.btn-contact:hover {
+  background-color: #0056b3;
+}

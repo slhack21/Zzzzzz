@@ -1,0 +1,184 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IHL Réparation - Réparation de Téléphones</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="logo">IHL Réparation</div>
+    <button id="menu-toggle" class="menu-toggle">≡</button>
+  </nav>
+  <div id="side-menu" class="side-menu">
+    <a id="login-link" href="login.html">Connexion</a>
+    <a id="settings-link" href="settings.html">Réglages</a>
+    <a href="#" id="theme-toggle">Mode sombre / clair</a>
+  </div>
+
+
+    <style>
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background-color: #f5f5f5;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      .site-name {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .auth-buttons a, .auth-buttons button {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    </style>
+
+    <header style="background-color: #222; color: white; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+      <div class="site-name">IHL Réparation</div>
+      <div class="auth-buttons" id="auth-buttons"></div>
+    </header>
+    
+    <header style="background-color: #222; color: white; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px;">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="50" height="50" fill="#3498db">
+                <path d="M75 10H25C16.7 10 10 16.7 10 25v50c0 8.3 6.7 15 15 15h50c8.3 0 15-6.7 15-15V25c0-8.3-6.7-15-15-15zm-5 65H30V25h40v50z"/>
+                <path d="M55 70h-10c-1.1 0-2-.9-2-2s.9-2 2-2h10c1.1 0 2 .9 2 2s-.9 2-2 2z"/>
+                <circle cx="50" cy="35" r="5"/>
+             </svg>
+            <div style="display:flex; justify-content:space-between; align-items:center;"><h1>IHL Réparation</h1><div id="burger" style="font-size:30px;cursor:pointer;">&#9776;</div></div>
+        </div>
+        <p></p>
+    </header>
+
+    <main>
+        <section id="services">
+            <h2>Nos Services</h2>
+            <ul>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Remplacement d'écran</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Changement de batterie</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Réparation connecteur de charge</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Désoxydation</li>
+                <li><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Et bien plus encore...</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contactez-nous</h2>
+            <p>Pour un devis gratuit ou plus d'informations :</p>
+            <a href="/cdn-cgi/l/email-protection#0665696872676572466f6e6a746376677467726f69682865696b" class="cta-button">Envoyer un Email</a>
+            <p>Ou appelez-nous au : <strong>0765758855</strong></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IHL Réparation. Tous droits réservés.</p>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+
+        <script type="module">
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+          import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+          const firebaseConfig = {
+            apiKey: "AIzaSyAB57QvsJb1EtBLZEq5k3Q7CYeLP61d8x8",
+            authDomain: "ihl-reparation-58e25.firebaseapp.com",
+            projectId: "ihl-reparation-58e25",
+            storageBucket: "ihl-reparation-58e25.firebasestorage.app",
+            messagingSenderId: "1025865567525",
+            appId: "1:1025865567525:web:d1ce02766a8dad37c89ecc",
+            measurementId: "G-HTD3HHVTTD"
+          };
+
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth(app);
+
+          const loginContainer = document.createElement("div");
+          loginContainer.id = "auth-buttons";
+          document.body.prepend(loginContainer);
+
+          onAuthStateChanged(auth, (user) => {
+            const container = document.getElementById("auth-buttons");
+            if (user) {
+              const logoutBtn = document.createElement("button");
+              logoutBtn.textContent = "Déconnexion";
+              logoutBtn.onclick = () => signOut(auth).then(() => location.reload());
+              container.appendChild(logoutBtn);
+            } else {
+              const loginBtn = document.createElement("a");
+              loginBtn.href = "login.html";
+              loginBtn.textContent = "Connexion";
+              loginBtn.style.margin = "10px";
+              loginBtn.style.display = "inline-block";
+              loginBtn.style.padding = "8px 12px";
+              loginBtn.style.background = "#007bff";
+              loginBtn.style.color = "#fff";
+              loginBtn.style.borderRadius = "4px";
+              container.appendChild(loginBtn);
+            }
+          });
+        </script>
+        
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+      import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyAB57QvsJb1EtBLZEq5k3Q7CYeLP61d8x8",
+        authDomain: "ihl-reparation-58e25.firebaseapp.com",
+        projectId: "ihl-reparation-58e25",
+        storageBucket: "ihl-reparation-58e25.firebasestorage.app",
+        messagingSenderId: "1025865567525",
+        appId: "1:1025865567525:web:d1ce02766a8dad37c89ecc",
+        measurementId: "G-HTD3HHVTTD"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      onAuthStateChanged(auth, (user) => {
+        const container = document.getElementById("auth-buttons");
+        container.innerHTML = "";
+        if (user) {
+          const logoutBtn = document.createElement("button");
+          logoutBtn.textContent = "Déconnexion";
+          logoutBtn.onclick = () => signOut(auth).then(() => location.reload());
+          container.appendChild(logoutBtn);
+        } else {
+          const loginBtn = document.createElement("a");
+          loginBtn.href = "login.html";
+          loginBtn.textContent = "Connexion";
+          container.appendChild(loginBtn);
+        }
+      });
+    </script>
+    
+</body>
+</html>
+    <div id="menu" style="display:none; background:#eee; position:absolute; top:60px; right:10px; padding:10px; border-radius:5px; transition:all 0.3s ease;">
+        <button onclick="location.href='login.html'">Connexion</button><br>
+        <button onclick="alert('Mode Sombre / Clair')">Mode Sombre / Clair</button><br>
+        <button onclick="location.href='settings.html'">Réglages</button>
+    </div>
+    <script>
+        document.getElementById("burger").onclick = function() {
+            let menu = document.getElementById("menu");
+            if(menu.style.display === "none") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+    </script>
+    
